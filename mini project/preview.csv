@@ -1,0 +1,6 @@
+x  trans_id,trans_date_trans_time,cc_num,merchant,category,amt,first,last,gender,street,city,state,lat,long,city_pop,job,dob,merch_lat,merch_long,is_fraud,customer_id
+295780.0,12/26/2023 0:55,579516000000.0,fraud_Bedi-Krish Pvt Ltd,,8552.65,Baiju,Sharma,F,"043, Lall Nagar, Dhule-732630",,Rajasthan,-3.6610785,145.222241,691077.0,"Surveyor, hydrographic",2/23/1993,-3.676868,145.213831,0.0,
+825718.0,07-07-2023 07:02,4126110000000000.0,,entertainment,9139.49,Bhavin,Roy,M,,Rourkela,Meghalaya,,-8.62593,,Comptroller,10/20/1994,-14.437954,-8.607795,,6.24e+18
+165012.0,4/25/2023 11:53,6563210000000000.0,fraud_Hans-Kanda Pvt Ltd,entertainment,7568.37,Yuvraj ,Madan,M,"04/41, Bawa Nagar, Khammam 816522",Jalna,Mizoram,76.1969725,102.564244,380244.0,Probation officer,10/18/1963,76.214025,102.567219,0.0,-2.61e+18
+,5/28/2023 18:26,3531340000000000.0,,entertainment,9074.0,Drishya,Bumb,F,"53/26, Chana Ganj, Varanasi 329560",Bharatpur,Chhattisgarh,27.8408555,93.934433,440893.0,,4/27/1996,27.838502,93.950223,0.0,2.19e+18
+742125.0,2/15/2023 18:55,4800550000000.0,"fraud_Agate, Varkey and Luthra Pvt Ltd",entertainment,5056.81,,Lal,M,"43/32, Yohannan Zila, Udaipur-067444",Nizamabad,Jharkhand,81.974419,71.656847,308606.0,Chiropodist,1/19/1994,81.959219,71.668432,0.0,-5.21e+18
