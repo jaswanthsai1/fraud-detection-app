@@ -6,6 +6,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
+import random
+import requests
 
 # ------------------------------
 # Function to calculate distance using Haversine formula
@@ -27,6 +29,29 @@ def verify_geolocation(reg_lat, reg_lon, trans_lat, trans_lon, threshold_km=5):
         return True, f"✅ Distance: {distance:.2f} km - Within threshold"
     else:
         return False, f"🚨 Distance: {distance:.2f} km - Outside threshold"
+
+# ------------------------------
+# Function to simulate OTP check
+# ------------------------------
+def simulate_otp():
+    otp = random.randint(100000, 999999)
+    st.info(f"Simulated OTP sent: {otp}")
+    user_otp = st.text_input("Enter the OTP you received:", max_chars=6)
+    if st.button("Verify OTP"):
+        if user_otp == str(otp):
+            st.success("✅ OTP Verified Successfully!")
+        else:
+            st.error("❌ Invalid OTP. Transaction flagged!")
+
+# ------------------------------
+# Function to check URL safety (mocked)
+# ------------------------------
+def check_url_fraud(url):
+    # Simulated phishing check (replace with real API call)
+    suspicious_keywords = ["login", "verify", "bank", "update", "confirm"]
+    if any(keyword in url.lower() for keyword in suspicious_keywords):
+        return "⚠️ Suspicious link detected! Might be phishing."
+    return "✅ Link appears safe."
 
 # ------------------------------
 # Streamlit UI
@@ -80,7 +105,7 @@ if uploaded_file is not None:
             st.text("Classification Report:")
             st.text(classification_report(y_test, y_pred))
 
-            # Optionally test geolocation validation
+            # Geolocation validation
             st.subheader("📍 Test Geolocation Verification")
             reg_lat = st.number_input("Registered Latitude", value=28.6139)
             reg_lon = st.number_input("Registered Longitude", value=77.2090)
@@ -89,6 +114,17 @@ if uploaded_file is not None:
             if st.button("Verify Location"):
                 valid, msg = verify_geolocation(reg_lat, reg_lon, trans_lat, trans_lon)
                 st.write(msg)
+
+            # OTP Simulation
+            st.subheader("🔐 Secondary OTP Verification")
+            simulate_otp()
+
+            # URL Checker
+            st.subheader("🔗 Link Fraud Check")
+            user_link = st.text_input("Paste a suspicious link here:")
+            if st.button("Check Link") and user_link:
+                result = check_url_fraud(user_link)
+                st.warning(result)
     except Exception as e:
         st.error(f"❌ Error loading file: {e}")
 else:
