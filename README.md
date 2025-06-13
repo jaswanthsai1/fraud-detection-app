@@ -1,2 +1,7 @@
-# fraud-detection-app
-The goal of a Fraud Detection and Reporting System is to identify and prevent fraudulent activities in real time, offering transparency, alerts, and detailed insights into fraud cases. This system is especially critical in industries dealing with large financial transactions, such as banking, e-commerce, and payment gateways.
+# 🧠 ML-Based Fraud Detection App
+
+Upload your transaction CSV and detect fraud using Random Forest.
+
+### How to run:
+1. Install requirements: `pip install -r requirements.txt`
+2. Run the app: `streamlit run streamlit_app.py`
